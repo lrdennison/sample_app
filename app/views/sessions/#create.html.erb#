@@ -1,0 +1,2 @@
+<% provide(:title, "Sign in") %>
+<h1>Oops, here</h1>
