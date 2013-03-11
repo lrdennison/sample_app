@@ -12,6 +12,15 @@ module SessionsHelper
     user == current_user
   end
 
+  # LRD: I don't like this method name
+  def signed_in_user
+    if( !signed_in?)
+      store_location
+      flash[:notice] = "Please sign in."
+      redirect_to signin_url
+    end
+  end
+
   def signed_in?
     !current_user.nil?
   end
